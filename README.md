@@ -1,21 +1,104 @@
 # Aether — Personal Mobile Agent
 
-A proactive Android agent that observes context, learns routines, and automates actions on your behalf.
+<div align="center">
 
-## Summary
+**A proactive Android agent that observes context, learns routines, and automates actions on your behalf.**
 
-Aether transforms an Android phone from a reactive device into a proactive assistant. Instead of waiting for manual commands, Aether continuously monitors contextual signals such as notifications, screen content, location, and time. It intelligently processes these signals to predict user intent and perform actions automatically, streamlining your daily digital workflow.
+![Android](https://img.shields.io/badge/Android-11+-3DDC84?logo=android\&logoColor=white)
+![Kotlin](https://img.shields.io/badge/Kotlin-2.0+-7F52FF?logo=kotlin\&logoColor=white)
+![Jetpack Compose](https://img.shields.io/badge/UI-Jetpack%20Compose-blue)
 
-## Features and Worflows
-
-* **Smart Meeting Preparation:** Automatically mutes the device and opens relevant meeting links or reminders just before a scheduled calendar event begins.
-* **Location-Based Triggers:** Launches your favorite workout playlist the moment you arrive at the gym or adjusts device settings when returning home.
-* **Natural Language Automation:** Creates calendar events, schedules reminders, or drafts messages directly from casual, natural language requests.
-* **Automated Social Reminders:** Sends birthday wishes or routine check-in messages automatically on your behalf.
-* **Background Efficiency:** Performs routine, multi-step actions seamlessly through Android Accessibility Services and background workers.
+</div>
 
 ---
 
-## 🏗️ System Architecture
+## Overview
 
-Aether continuously monitors incoming context signals, passes them to a localized Decision Engine, and optionally utilizes cloud intelligence for complex natural language processing to execute systemic actions.
+Aether transforms an Android phone from a reactive device into a proactive assistant.
+
+Instead of waiting for commands, Aether continuously monitors contextual signals such as notifications, screen content, location, and time. It uses these signals to predict user intent and perform actions automatically.
+
+### Examples
+
+* Mute the phone before scheduled meetings
+* Launch workout playlists when arriving at the gym
+* Create calendar events from natural language requests
+* Send birthday wishes automatically
+* Open meeting links and reminders before events
+* Perform routine actions through Accessibility Services
+
+---
+
+## Architecture
+
+```mermaid
+flowchart LR
+
+N[Notifications]
+S[Screen Context]
+L[Location]
+T[Time & Calendar]
+
+N --> B[Aether Agent]
+S --> B
+L --> B
+T --> B
+
+B --> D[Decision Engine]
+
+D --> M[Mute Device]
+D --> C[Calendar Actions]
+D --> MSG[Messaging]
+D --> P[Media Control]
+
+D -. Optional .-> G[Groq LLM]
+```
+
+### Core Components
+
+| Component            | Purpose                                                            |
+| -------------------- | ------------------------------------------------------------------ |
+| Context Collectors   | Gather signals from notifications, screen, location, and schedules |
+| Decision Engine      | Determines when and how actions should be executed                 |
+| Local Memory         | Stores learned preferences and user corrections                    |
+| Action Layer         | Executes actions using Android system services                     |
+| Cloud LLM (Optional) | Handles complex natural language understanding                     |
+
+---
+
+## Technology Stack
+
+* **Kotlin**
+* **Jetpack Compose**
+* **MVVM Architecture**
+* **Room Database**
+* **WorkManager**
+* **Foreground Services**
+* **NotificationListenerService**
+* **AccessibilityService**
+* **Fused Location Provider**
+* **Cloudflare Workers**
+* **Groq API (Optional)**
+
+---
+
+## Key Ideas
+
+* Context-aware automation
+* On-device decision making
+* Habit learning through user feedback
+* Privacy-first design
+* Optional cloud intelligence
+
+---
+
+## Future Work
+
+* Multi-agent task planning
+* Cross-device synchronization
+* RAG-based long-term memory
+* Custom automation workflows
+
+---
+
+**Aether explores what a truly proactive mobile assistant could look like when integrated directly into the Android operating environment.**
