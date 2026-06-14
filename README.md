@@ -1,12 +1,12 @@
-readme_content = """# Aether — Personal Mobile Agent
+# Aether — Personal Mobile Agent
 
 A proactive Android agent that observes context, learns routines, and automates actions on your behalf.
 
-## 📌 Overview
+## Summary
 
 Aether transforms an Android phone from a reactive device into a proactive assistant. Instead of waiting for manual commands, Aether continuously monitors contextual signals such as notifications, screen content, location, and time. It intelligently processes these signals to predict user intent and perform actions automatically, streamlining your daily digital workflow.
 
-## 🚀 Key Features & Examples
+## Features and Worflows
 
 * **Smart Meeting Preparation:** Automatically mutes the device and opens relevant meeting links or reminders just before a scheduled calendar event begins.
 * **Location-Based Triggers:** Launches your favorite workout playlist the moment you arrive at the gym or adjusts device settings when returning home.
