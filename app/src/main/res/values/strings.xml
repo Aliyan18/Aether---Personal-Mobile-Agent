@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Aether</string>
+    <string name="accessibility_service_description">Aether Accessibility Service</string>
+</resources>
