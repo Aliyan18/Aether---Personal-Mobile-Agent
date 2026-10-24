@@ -17,4 +17,10 @@ interface EpisodeDao {
 
     @Query("DELETE FROM episodes WHERE timestamp < :olderThan")
     suspend fun deleteOldEpisodes(olderThan: Long)
+
+    @Query("DELETE FROM episodes WHERE id = :id")
+    suspend fun deleteEpisode(id: Long)
+
+    @Query("DELETE FROM episodes")
+    suspend fun deleteAll()
 }

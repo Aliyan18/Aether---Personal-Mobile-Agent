@@ -2,6 +2,7 @@ package com.aether.agent.agent
 
 import android.content.Context
 import android.util.Log
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.aether.agent.memory.EpisodeEntity
 import com.aether.agent.memory.MemoryManager
 import com.aether.agent.triggers.ProactiveEngine
@@ -21,6 +22,7 @@ class AgentCore(
     private val tag = "AgentCore"
 
     fun processTrigger(triggerText: String, isProactive: Boolean = false) {
+        FirebaseCrashlytics.getInstance().log("Processing trigger: $triggerText")
         scope.launch {
             Log.d(tag, "Processing: $triggerText (proactive=$isProactive)")
 
